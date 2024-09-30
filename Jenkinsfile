@@ -1,20 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    stage(‘Error’) {
-      steps {
-        error “failure test. It’s work”
-      }
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('email notification') {
+            mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'This is pipeline build message', to: 'kiruthikag23@gmail.com'
+            }
+        }
     }
-    stage(‘ItNotWork’) {
-      steps {
-        echo “is not pass here”
-      }
-   }
-   post {
-    success {
-      mail to: team@example.com, subject: ‘The Pipeline success :(‘
-      }
-    }
-  }
 }
