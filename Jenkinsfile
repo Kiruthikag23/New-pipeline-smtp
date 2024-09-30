@@ -11,10 +11,10 @@ pipeline {
         echo “is not pass here”
       }
    }
-  }
-  post {
+   post {
     success {
-      mail to: kiruthikag23@gmail.com, subject: ‘The Pipeline success :(‘
+      mail to: team@example.com, subject: ‘The Pipeline success :(‘
+      }
     }
   }
 }
