@@ -5,10 +5,13 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+        
+         Post{
+            Success{
+               emailext body: 'This is the first project', subject: 'Test Mail', to: 'kiruthikag23@gmail.com'
             }
-        }
-        stage('email notification') {
-            mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'This is pipeline build message', to: 'kiruthikag23@gmail.com'
+         }
             }
         }
     }
+}
